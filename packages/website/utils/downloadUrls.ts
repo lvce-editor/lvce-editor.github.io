@@ -12,9 +12,8 @@ export function getDownloadUrl(
   platform: Platform,
   config: DownloadConfig,
 ): string {
-  const {version} = config;
-  const releaseUrlBase =
-    config.releaseUrlBase || DEFAULT_RELEASE_URL_BASE;
+  const { version } = config;
+  const releaseUrlBase = config.releaseUrlBase || DEFAULT_RELEASE_URL_BASE;
   const versionTag = version.startsWith("v") ? version : `v${version}`;
 
   const platformFiles: Record<Platform, string> = {
@@ -36,4 +35,3 @@ export function getAllDownloadUrls(
     windows: getDownloadUrl("windows", config),
   };
 }
-
