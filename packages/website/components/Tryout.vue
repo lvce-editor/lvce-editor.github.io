@@ -13,8 +13,6 @@
             class="demo-iframe"
             title="Lvce Editor Demo"
             allow="clipboard-read; clipboard-write"
-            sandbox="allow-scripts allow-popups allow-forms allow-modals allow-same-origin"
-            crossorigin="anonymous"
           ></iframe>
         </div>
       </div>
