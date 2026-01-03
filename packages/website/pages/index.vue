@@ -190,7 +190,7 @@ const downloadUrls = computed(() =>
   getAllDownloadUrls({
     version: config.public.version,
     releaseUrlBase: config.public.releaseUrlBase,
-  })
+  }),
 );
 
 const { theme, toggleTheme } = useTheme();
