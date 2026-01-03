@@ -11,4 +11,7 @@ export default [
       "github-actions/permissions": "off",
     },
   },
+  {
+    ignores: ["**/.nuxt/**"],
+  },
 ];
