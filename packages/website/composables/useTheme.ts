@@ -8,7 +8,7 @@ export const useTheme = (): {
 
   const setTheme = (newTheme: "light" | "dark"): void => {
     theme.value = newTheme;
-    if (process.client) {
+    if (import.meta.client) {
       document.documentElement.dataset.theme = newTheme;
       localStorage.setItem("theme", newTheme);
     }
@@ -19,7 +19,7 @@ export const useTheme = (): {
   };
 
   const initTheme = (): void => {
-    if (process.client) {
+    if (import.meta.client) {
       const savedTheme = localStorage.getItem("theme") as
         | "light"
         | "dark"
