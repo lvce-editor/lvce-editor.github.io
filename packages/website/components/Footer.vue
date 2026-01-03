@@ -1,9 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">
-        Copyright 2026 Lvce Editor
-      </p>
+      <p class="footer-text">Copyright 2026 Lvce Editor</p>
     </div>
   </footer>
 </template>
