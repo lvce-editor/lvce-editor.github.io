@@ -28,6 +28,8 @@ function updateDependencies {
 
                                                        updateDependencies             &&
 cd packages/build                                   && updateDependencies && cd ../.. &&
+cd packages/website                                   && updateDependencies && cd ../.. &&
+cd packages/e2e                                   && updateDependencies && cd ../.. &&
 
 echo "Great Success!"
 
