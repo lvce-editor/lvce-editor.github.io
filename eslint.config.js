@@ -10,7 +10,7 @@ export default [
       "github-actions/needs": "off",
       "github-actions/permissions": "off",
       "unicorn/text-encoding-identifier-case": "off",
-      " @typescript-eslint/prefer-readonly-parameter-types": "off",
+      "@typescript-eslint/prefer-readonly-parameter-types": "off",
     },
   },
   {
