@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-text">
-        © 2024 Lvce Editor. Open source and built with ❤️
+        Copyright 2026 Lvce Editor
       </p>
     </div>
   </footer>
