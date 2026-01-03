@@ -8,7 +8,6 @@
           </NuxtLink>
         </div>
         <nav class="header-nav">
-          <NuxtLink to="/download" class="nav-link">Download</NuxtLink>
           <button
             @click="toggleTheme"
             class="theme-toggle"
@@ -29,6 +28,7 @@
               class="theme-icon"
             />
           </button>
+          <NuxtLink to="/download" class="nav-link">Download</NuxtLink>
           <a
             href="https://lvce-editor.github.io/blog/"
             class="blog-link"
