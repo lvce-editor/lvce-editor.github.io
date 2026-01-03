@@ -1,0 +1,31 @@
+{
+  "name": "lvce-editor.github.io",
+  "version": "0.0.0-dev",
+  "description": "Lvce Editor",
+  "repository": {
+    "type": "git",
+    "url": "git@levivilet.github.com:lvce-editor/lvce-editor.github.io.git"
+  },
+  "license": "MIT",
+  "author": "Lvce Editor",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo ok",
+    "dev": "node packages/build/src/dev.ts",
+    "e2e": "cd packages/e2e && npm run e2e",
+    "format": "prettier --write .",
+    "postinstall": "lerna bootstrap --ci",
+    "lint": "eslint . && prettier --check .",
+    "test": "lerna run test",
+    "type-check": "tsc -b"
+  },
+  "devDependencies": {
+    "@lerna/legacy-package-management": "^8.2.4",
+    "@lvce-editor/eslint-config": "^4.3.0",
+    "eslint": "^9.39.2",
+    "lerna": "^8.2.4",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
+  }
+}
