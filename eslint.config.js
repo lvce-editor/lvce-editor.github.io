@@ -9,6 +9,10 @@ export default [
     rules: {
       "github-actions/needs": "off",
       "github-actions/permissions": "off",
+      "unicorn/text-encoding-identifier-case": "off",
     },
+  },
+  {
+    ignores: ["**/.nuxt/**"],
   },
 ];
