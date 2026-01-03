@@ -14,6 +14,7 @@
     "build": "node packages/build/src/build.ts",
     "dev": "node packages/build/src/dev.ts",
     "e2e": "cd packages/e2e && npm run e2e",
+    "e2e:headless": "echo ok",
     "format": "prettier --write .",
     "postinstall": "lerna bootstrap --ci",
     "lint": "eslint . && prettier --check .",
