@@ -10,7 +10,11 @@
             <button
               @click="toggleTheme"
               class="theme-toggle"
-              :aria-label="theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'"
+              :aria-label="
+                theme === 'light'
+                  ? 'Switch to dark mode'
+                  : 'Switch to light mode'
+              "
             >
               <svg
                 v-if="theme === 'light'"
@@ -20,9 +24,7 @@
                 stroke="currentColor"
                 stroke-width="2"
               >
-                <path
-                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                />
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
               <svg
                 v-else
@@ -43,6 +45,13 @@
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
             </button>
+            <a
+              href="https://lvce-editor.github.io/blog/"
+              class="blog-link"
+              aria-label="Blog"
+            >
+              Blog
+            </a>
             <a
               href="https://github.com/lvce-editor/lvce-editor/"
               target="_blank"
@@ -181,7 +190,7 @@ const downloadUrls = computed(() =>
   getAllDownloadUrls({
     version: config.public.version,
     releaseUrlBase: config.public.releaseUrlBase,
-  }),
+  })
 );
 
 const { theme, toggleTheme } = useTheme();
@@ -208,13 +217,21 @@ const { theme, toggleTheme } = useTheme();
   position: relative;
   background: var(--overlay-bg);
   backdrop-filter: blur(20px);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .logo h1 {
@@ -237,6 +254,22 @@ const { theme, toggleTheme } = useTheme();
 }
 
 .github-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.blog-link {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+}
+
+.blog-link:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
 }
@@ -387,7 +420,9 @@ const { theme, toggleTheme } = useTheme();
   padding: 8rem 0;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .features-grid {
@@ -435,7 +470,9 @@ const { theme, toggleTheme } = useTheme();
   border-top: 1px solid var(--border-color);
   text-align: center;
   background: var(--bg-tertiary);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .footer-text {
