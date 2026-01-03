@@ -9,6 +9,10 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8"
+  },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^25.0.3",

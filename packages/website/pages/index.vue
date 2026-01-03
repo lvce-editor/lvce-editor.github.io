@@ -1,5 +1,6 @@
 <template>
   <div class="landing-page">
+<<<<<<< HEAD
     <header class="header">
       <div class="container">
         <div class="header-content">
@@ -128,57 +129,34 @@
           </div>
         </div>
       </section>
+=======
+    <Header />
 
-      <section class="features">
-        <div class="container">
-          <div class="features-grid">
-            <div class="feature-card">
-              <h3 class="feature-title">Lightning Fast</h3>
-              <p class="feature-description">
-                Built for performance with instant startup and smooth editing
-                experience.
-              </p>
-            </div>
-            <div class="feature-card">
-              <h3 class="feature-title">Extensible</h3>
-              <p class="feature-description">
-                Customize and extend with plugins to fit your workflow.
-              </p>
-            </div>
-            <div class="feature-card">
-              <h3 class="feature-title">Beautiful UI</h3>
-              <p class="feature-description">
-                Modern, clean interface designed for focus and productivity.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main class="main">
+      <Hero />
+>>>>>>> origin/main
+
+      <Tryout />
+
+      <Features />
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="footer-text">
-          © 2024 Lvce Editor. Open source and built with ❤️
-        </p>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { getAllDownloadUrls } from "~/utils/downloadUrls";
-
-const config = useRuntimeConfig();
-const downloadUrls = computed(() =>
-  getAllDownloadUrls({
-    version: config.public.version,
-    releaseUrlBase: config.public.releaseUrlBase,
-  }),
-);
-
-const { theme, toggleTheme } = useTheme();
+useHead({
+  title:
+    "Lvce Editor - A Modern Code Editor Built for Developers | Fast & Extensible",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Experience a powerful, fast, and extensible code editor designed to enhance your development workflow. Download Lvce Editor for Windows, macOS, or Linux.",
+    },
+  ],
+});
 </script>
 
 <style scoped>
@@ -190,6 +168,7 @@ const { theme, toggleTheme } = useTheme();
   z-index: 1;
 }
 
+<<<<<<< HEAD
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -528,4 +507,9 @@ const { theme, toggleTheme } = useTheme();
     grid-template-columns: 1fr;
   }
 }
+=======
+.main {
+  flex: 1;
+}
+>>>>>>> origin/main
 </style>
