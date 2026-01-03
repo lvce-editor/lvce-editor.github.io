@@ -197,7 +197,7 @@ const { theme, toggleTheme } = useTheme();
 }
 
 .download-hero {
-  padding: 6rem 0;
+  padding: 8rem 0;
   text-align: center;
   position: relative;
 }
@@ -209,7 +209,7 @@ const { theme, toggleTheme } = useTheme();
 }
 
 .download-hero-title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 1.5rem;
