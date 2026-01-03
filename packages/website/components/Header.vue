@@ -197,4 +197,8 @@ const { theme, toggleTheme } = useTheme();
 [data-theme="light"] .theme-icon {
   filter: brightness(0);
 }
+
+[data-theme="dark"] .theme-icon {
+  filter: brightness(0) invert(1);
+}
 </style>
