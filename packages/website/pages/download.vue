@@ -123,7 +123,7 @@
     <footer class="footer">
       <div class="container">
         <p class="footer-text">
-          © 2024 Lvce Editor. Open source and built with ❤️
+          © {{ currentYear }} Lvce Editor. Open source and built with ❤️
         </p>
       </div>
     </footer>
@@ -152,6 +152,7 @@ useHead({
 });
 
 const config = useRuntimeConfig();
+const currentYear = config.public.currentYear;
 const downloadUrls = computed(() =>
   getAllDownloadUrls({
     version: config.public.version,
