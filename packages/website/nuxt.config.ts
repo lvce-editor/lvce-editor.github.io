@@ -25,9 +25,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      currentYear: config.currentYear,
       releaseUrlBase: process.env.RELEASE_URL_BASE || config.releaseUrlBase,
       version: process.env.APP_VERSION || config.version,
-      currentYear: config.currentYear,
     },
   },
   ssr: true,
