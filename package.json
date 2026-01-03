@@ -2,6 +2,13 @@
   "name": "lvce-editor.github.io",
   "version": "1.0.0",
   "description": "Lvce Editor",
+  "repository": {
+    "type": "git",
+    "url": "git@levivilet.github.com:lvce-editor/lvce-editor.github.io.git"
+  },
+  "license": "MIT",
+  "author": "Lvce Editor",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "echo ok",
@@ -13,14 +20,6 @@
     "test": "lerna run test",
     "type-check": "tsc -b"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@levivilet.github.com:lvce-editor/lvce-editor.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "type": "module",
   "devDependencies": {
     "@lerna/legacy-package-management": "^8.2.4",
     "@lvce-editor/eslint-config": "^4.3.0",
