@@ -3,6 +3,7 @@
     <Header />
 
     <main class="main">
+      <<<<<<< Updated upstream
       <section class="hero">
         <div class="container">
           <div class="hero-content">
@@ -72,32 +73,13 @@
           </div>
         </div>
       </section>
+      =======
+      <Hero />
+      >>>>>>> Stashed changes
 
-      <section class="features">
-        <div class="container">
-          <div class="features-grid">
-            <div class="feature-card">
-              <h3 class="feature-title">Lightning Fast</h3>
-              <p class="feature-description">
-                Built for performance with instant startup and smooth editing
-                experience.
-              </p>
-            </div>
-            <div class="feature-card">
-              <h3 class="feature-title">Extensible</h3>
-              <p class="feature-description">
-                Customize and extend with plugins to fit your workflow.
-              </p>
-            </div>
-            <div class="feature-card">
-              <h3 class="feature-title">Beautiful UI</h3>
-              <p class="feature-description">
-                Modern, clean interface designed for focus and productivity.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Tryout />
+
+      <Features />
     </main>
 
     <Footer />
@@ -105,9 +87,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { getAllDownloadUrls } from "~/utils/downloadUrls";
-
 useHead({
   title:
     "Lvce Editor - A Modern Code Editor Built for Developers | Fast & Extensible",
@@ -119,14 +98,6 @@ useHead({
     },
   ],
 });
-
-const config = useRuntimeConfig();
-const downloadUrls = computed(() =>
-  getAllDownloadUrls({
-    version: config.public.version,
-    releaseUrlBase: config.public.releaseUrlBase,
-  }),
-);
 </script>
 
 <style scoped>
@@ -138,15 +109,10 @@ const downloadUrls = computed(() =>
   z-index: 1;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 .main {
   flex: 1;
 }
+<<<<<<< Updated upstream
 
 .hero {
   padding: 8rem 0;
@@ -361,4 +327,6 @@ const downloadUrls = computed(() =>
     grid-template-columns: 1fr;
   }
 }
+=======
+>>>>>>> Stashed changes
 </style>
