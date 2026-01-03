@@ -22,5 +22,13 @@ export default defineNuxtConfig({
       routes: ["/"],
     },
   },
+  runtimeConfig: {
+    public: {
+      releaseUrlBase:
+        process.env.RELEASE_URL_BASE ||
+        "https://github.com/lvce-editor/lvce-editor/releases/download",
+      version: process.env.APP_VERSION || "0.70.0",
+    },
+  },
   ssr: false,
 });
