@@ -13,9 +13,7 @@
             @click="toggleTheme"
             class="theme-toggle"
             :aria-label="
-              theme === 'light'
-                ? 'Switch to dark mode'
-                : 'Switch to light mode'
+              theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
             "
           >
             <img
@@ -200,4 +198,3 @@ const { theme, toggleTheme } = useTheme();
   filter: brightness(0);
 }
 </style>
-

@@ -303,7 +303,6 @@ const downloadUrls = computed(() =>
   transition: color 0.3s ease;
 }
 
-
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
