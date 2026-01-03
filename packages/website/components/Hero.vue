@@ -51,6 +51,11 @@
               </div>
             </a>
           </div>
+          <div class="other-platforms-link">
+            <NuxtLink to="/download" class="other-platforms-text">
+              See All Downloads
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -198,6 +203,29 @@ const downloadUrls = computed(() =>
   margin-top: 0.25rem;
   font-family: "JetBrains Mono", monospace;
   transition: color 0.3s ease;
+}
+
+.other-platforms-link {
+  margin-top: 1.5rem;
+  text-align: right;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.other-platforms-text {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.other-platforms-text:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--text-tertiary);
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 768px) {
