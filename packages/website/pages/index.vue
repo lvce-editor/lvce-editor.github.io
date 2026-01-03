@@ -42,7 +42,6 @@
                   :href="downloadUrls.windows"
                   class="download-button windows"
                   rel="download"
-                  @click.prevent="handleDownload('windows')"
                 >
                   <svg
                     class="platform-icon"
@@ -62,7 +61,6 @@
                   :href="downloadUrls.macos"
                   class="download-button macos"
                   rel="download"
-                  @click.prevent="handleDownload('macos')"
                 >
                   <svg
                     class="platform-icon"
@@ -82,7 +80,6 @@
                   :href="downloadUrls.linux"
                   class="download-button linux"
                   rel="download"
-                  @click.prevent="handleDownload('linux')"
                 >
                   <svg
                     class="platform-icon"
@@ -143,7 +140,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { getAllDownloadUrls, type Platform } from "~/utils/downloadUrls";
+import { getAllDownloadUrls } from "~/utils/downloadUrls";
 
 const config = useRuntimeConfig();
 const downloadUrls = computed(() =>
@@ -152,11 +149,6 @@ const downloadUrls = computed(() =>
     releaseUrlBase: config.public.releaseUrlBase,
   }),
 );
-
-const handleDownload = (platform: Platform): void => {
-  const url = downloadUrls.value[platform];
-  window.location.href = url;
-};
 </script>
 
 <style scoped>
