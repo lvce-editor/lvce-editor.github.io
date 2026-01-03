@@ -24,7 +24,7 @@
               <h3 class="download-title">Download for your platform</h3>
               <div class="download-buttons">
                 <a
-                  href="#"
+                  :href="downloadUrls.windows"
                   class="download-button windows"
                   @click.prevent="handleDownload('windows')"
                 >
@@ -43,7 +43,7 @@
                   </div>
                 </a>
                 <a
-                  href="#"
+                  :href="downloadUrls.macos"
                   class="download-button macos"
                   @click.prevent="handleDownload('macos')"
                 >
@@ -62,7 +62,7 @@
                   </div>
                 </a>
                 <a
-                  href="#"
+                  :href="downloadUrls.linux"
                   class="download-button linux"
                   @click.prevent="handleDownload('linux')"
                 >
@@ -77,7 +77,7 @@
                   </svg>
                   <div class="button-content">
                     <span class="button-label">Linux</span>
-                    <span class="button-subtitle">.AppImage</span>
+                    <span class="button-subtitle">.deb</span>
                   </div>
                 </a>
               </div>
