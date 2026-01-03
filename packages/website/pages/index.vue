@@ -127,11 +127,20 @@
 </template>
 
 <script setup lang="ts">
-const handleDownload = (platform: string): void => {
-  // TODO: Replace with actual download URLs
-  console.log(`Download for ${platform}`);
-  // In production, this would redirect to the actual download URL
-  // window.location.href = getDownloadUrl(platform)
+import { computed } from "vue";
+import { getAllDownloadUrls, type Platform } from "~/utils/downloadUrls";
+
+const config = useRuntimeConfig();
+const downloadUrls = computed(() =>
+  getAllDownloadUrls({
+    version: config.public.version,
+    releaseUrlBase: config.public.releaseUrlBase,
+  }),
+);
+
+const handleDownload = (platform: Platform): void => {
+  const url = downloadUrls.value[platform];
+  window.location.href = url;
 };
 </script>
 
