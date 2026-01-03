@@ -9,7 +9,7 @@ const main = async () => {
     cwd: join(root, "packages", "website"),
   });
   const dist = join(root, "packages", "build", ".tmp", "dist");
-  await rm(dist, { recursive: true });
+  await rm(dist, { recursive: true, force: true });
   await mkdir(dirname(dist), { recursive: true });
   await cp(join(root, "packages", "website", ".output", "public"), dist, {
     recursive: true,
