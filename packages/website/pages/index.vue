@@ -45,7 +45,18 @@
               class="github-link"
               aria-label="View on GitHub"
             >
-              <img src="/github-icon.svg" alt="GitHub" class="github-icon" />
+              <img
+                v-if="theme === 'light'"
+                src="/github-icon-light.svg"
+                alt="GitHub"
+                class="github-icon"
+              />
+              <img
+                v-else
+                src="/github-icon-dark.svg"
+                alt="GitHub"
+                class="github-icon"
+              />
             </a>
           </nav>
         </div>
@@ -267,10 +278,6 @@ const { theme, toggleTheme } = useTheme();
 
 .github-link:hover .github-icon {
   opacity: 1;
-}
-
-[data-theme="light"] .github-icon {
-  filter: brightness(0);
 }
 
 .theme-toggle {
