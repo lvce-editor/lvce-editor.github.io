@@ -3,6 +3,9 @@ import { defineNuxtConfig } from "nuxt/config";
 import config from "./config.json" with { type: "json" };
 
 export default defineNuxtConfig({
+  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
+  ssr: true,
+  devtools: { enabled: true },
   app: {
     head: {
       link: [{ href: "/favicon.ico", rel: "icon", type: "image/x-icon" }],
@@ -17,12 +20,7 @@ export default defineNuxtConfig({
       title: "Lvce Editor",
     },
   },
-  devtools: { enabled: true },
-  nitro: {
-    prerender: {
-      routes: ["/"],
-    },
-  },
+
   runtimeConfig: {
     public: {
       currentYear: config.currentYear,
@@ -30,5 +28,9 @@ export default defineNuxtConfig({
       version: process.env.APP_VERSION || config.version,
     },
   },
-  ssr: true,
+  nitro: {
+    prerender: {
+      routes: ["/", "/download"],
+    },
+  },
 });
