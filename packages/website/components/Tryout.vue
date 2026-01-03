@@ -9,7 +9,7 @@
         </p>
         <div class="iframe-wrapper">
           <iframe
-            src="https://lvce-editor.github.io/lvce-editor/"
+            src="https://lvce-editor.github.io/theme-atom-one-dark/"
             class="demo-iframe"
             title="Lvce Editor Demo"
             allow="clipboard-read; clipboard-write"
