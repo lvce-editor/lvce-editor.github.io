@@ -133,6 +133,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import {
+  type DownloadVariant,
   getAllDownloadUrls,
   getAdditionalDownloadVariants,
   getVariantDownloadUrl,
@@ -165,14 +166,11 @@ const additionalVariants = computed(() =>
   }),
 );
 
-function getVariantUrl(variant: string): string {
-  return getVariantDownloadUrl(
-    variant as any,
-    {
-      version: config.public.version,
-      releaseUrlBase: config.public.releaseUrlBase,
-    },
-  );
+function getVariantUrl(variant: DownloadVariant): string {
+  return getVariantDownloadUrl(variant, {
+    version: config.public.version,
+    releaseUrlBase: config.public.releaseUrlBase,
+  });
 }
 
 const { theme, toggleTheme } = useTheme();
