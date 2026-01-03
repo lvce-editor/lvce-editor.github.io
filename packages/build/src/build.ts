@@ -14,7 +14,7 @@ const main = async () => {
     {
       recursive: true,
       force: true,
-    }
+    },
   );
 };
 
