@@ -2,9 +2,6 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
-  ssr: true,
-  devtools: { enabled: true },
   app: {
     head: {
       link: [{ href: "/favicon.ico", rel: "icon", type: "image/x-icon" }],
@@ -19,6 +16,15 @@ export default defineNuxtConfig({
       title: "Lvce Editor",
     },
   },
+  devtools: { enabled: true },
+  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
+  ssr: true,
+
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
 
   runtimeConfig: {
     public: {
@@ -26,11 +32,6 @@ export default defineNuxtConfig({
         process.env.RELEASE_URL_BASE ||
         "https://github.com/lvce-editor/lvce-editor/releases/download",
       version: process.env.APP_VERSION || "0.70.0",
-    },
-  },
-  nitro: {
-    prerender: {
-      routes: ["/"],
     },
   },
 });
