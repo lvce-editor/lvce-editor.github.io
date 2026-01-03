@@ -2,6 +2,12 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+
+
+
+  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
+  ssr: true,
+  devtools: { enabled: true },
   app: {
     head: {
       link: [{ href: "/favicon.ico", rel: "icon", type: "image/x-icon" }],
@@ -17,14 +23,6 @@ export default defineNuxtConfig({
     },
   },
 
-  devtools: { enabled: true },
-
-  nitro: {
-    prerender: {
-      routes: ["/"],
-    },
-  },
-
   runtimeConfig: {
     public: {
       releaseUrlBase:
@@ -33,7 +31,9 @@ export default defineNuxtConfig({
       version: process.env.APP_VERSION || "0.70.0",
     },
   },
-
-  ssr: true,
-  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
 });
