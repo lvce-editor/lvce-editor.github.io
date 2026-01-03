@@ -10,7 +10,7 @@ const DEFAULT_RELEASE_URL_BASE =
 
 export function getDownloadUrl(
   platform: Platform,
-  config: DownloadConfig
+  config: DownloadConfig,
 ): string {
   const { version } = config;
   const releaseUrlBase = config.releaseUrlBase || DEFAULT_RELEASE_URL_BASE;
@@ -27,7 +27,7 @@ export function getDownloadUrl(
 }
 
 export function getAllDownloadUrls(
-  config: DownloadConfig
+  config: DownloadConfig,
 ): Record<Platform, string> {
   return {
     linux: getDownloadUrl("linux", config),
