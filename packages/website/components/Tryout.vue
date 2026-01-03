@@ -7,21 +7,18 @@
           Experience Lvce Editor directly in your browser. No installation
           required.
         </p>
-        <div class="iframe-wrapper">
-          <iframe
-            src="https://lvce-editor.github.io/theme-atom-one-dark/"
-            class="demo-iframe"
-            title="Lvce Editor Demo"
-            allow="clipboard-read; clipboard-write"
-          ></iframe>
-        </div>
+        <ViewportIFrame
+          src="https://lvce-editor.github.io/theme-atom-one-dark/"
+          title="Lvce Editor Demo"
+          allow="clipboard-read; clipboard-write"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// No script needed for tryout component
+import ViewportIFrame from './ViewportIFrame.vue'
 </script>
 
 <style scoped>
@@ -67,30 +64,6 @@
   transition: color 0.3s ease;
 }
 
-.iframe-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  background: var(--card-bg);
-  transition: all 0.3s ease;
-}
-
-[data-theme="dark"] .iframe-wrapper {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.demo-iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
-  display: block;
-  background: var(--bg-primary);
-}
 
 @media (max-width: 768px) {
   .demo-title {
@@ -99,10 +72,6 @@
 
   .demo-description {
     font-size: 1rem;
-  }
-
-  .demo-iframe {
-    height: 500px;
   }
 }
 </style>
