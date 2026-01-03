@@ -16,20 +16,21 @@ export default defineNuxtConfig({
       title: "Lvce Editor",
     },
   },
-  devtools: { enabled: true },
   modules: ["@nuxtjs/seo", "@nuxt/fonts"],
+  devtools: { enabled: true },
   ssr: true,
-  nitro: {
-    prerender: {
-      routes: ["/"],
-    },
-  },
+
   runtimeConfig: {
     public: {
       releaseUrlBase:
         process.env.RELEASE_URL_BASE ||
         "https://github.com/lvce-editor/lvce-editor/releases/download",
       version: process.env.APP_VERSION || "0.70.0",
+    },
+  },
+  nitro: {
+    prerender: {
+      routes: ["/"],
     },
   },
 });
