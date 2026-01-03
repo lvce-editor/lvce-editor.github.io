@@ -103,6 +103,18 @@
 import { computed } from "vue";
 import { getAllDownloadUrls } from "~/utils/downloadUrls";
 
+useHead({
+  title:
+    "Lvce Editor - A Modern Code Editor Built for Developers | Fast & Extensible",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Experience a powerful, fast, and extensible code editor designed to enhance your development workflow. Download Lvce Editor for Windows, macOS, or Linux.",
+    },
+  ],
+});
+
 const config = useRuntimeConfig();
 const downloadUrls = computed(() =>
   getAllDownloadUrls({
