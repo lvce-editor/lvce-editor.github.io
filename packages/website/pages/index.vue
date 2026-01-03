@@ -7,6 +7,44 @@
             <h1>Lvce Editor</h1>
           </div>
           <nav class="header-nav">
+            <button
+              @click="toggleTheme"
+              class="theme-toggle"
+              :aria-label="
+                theme === 'light'
+                  ? 'Switch to dark mode'
+                  : 'Switch to light mode'
+              "
+            >
+              <svg
+                v-if="theme === 'light'"
+                class="theme-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+              <svg
+                v-else
+                class="theme-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            </button>
             <a
               href="https://lvce-editor.github.io/blog/"
               class="blog-link"
@@ -154,6 +192,8 @@ const downloadUrls = computed(() =>
     releaseUrlBase: config.public.releaseUrlBase,
   }),
 );
+
+const { theme, toggleTheme } = useTheme();
 </script>
 
 <style scoped>
@@ -173,10 +213,13 @@ const downloadUrls = computed(() =>
 
 .header {
   padding: 2rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color);
   position: relative;
-  background: rgba(10, 10, 10, 0.8);
+  background: var(--overlay-bg);
   backdrop-filter: blur(20px);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .header-content {
@@ -194,15 +237,16 @@ const downloadUrls = computed(() =>
 .logo h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   letter-spacing: -0.5px;
   font-family: "Inter", sans-serif;
+  transition: color 0.3s ease;
 }
 
 .github-link {
   display: flex;
   align-items: center;
-  color: #a0a0a0;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: all 0.2s ease;
   padding: 0.5rem;
@@ -210,34 +254,23 @@ const downloadUrls = computed(() =>
 }
 
 .github-link:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.blog-link {
-  color: #a0a0a0;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-family: "Inter", sans-serif;
-}
-
-.blog-link:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  background: var(--card-bg);
 }
 
 .github-icon {
   width: 20px;
   height: 20px;
-  transition: filter 0.2s ease;
+  transition: opacity 0.2s ease;
+  opacity: 0.7;
 }
 
 .github-link:hover .github-icon {
-  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+[data-theme="light"] .github-icon {
+  filter: brightness(0);
 }
 
 .main {
@@ -261,22 +294,24 @@ const downloadUrls = computed(() =>
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: var(--text-primary);
   font-family: "Inter", sans-serif;
   letter-spacing: -1.5px;
+  transition: color 0.3s ease;
 }
 
 .accent-text {
-  color: #a0a0a0;
+  color: var(--text-secondary);
   display: block;
   margin-top: 0.5rem;
   font-weight: 400;
   font-size: 0.85em;
+  transition: color 0.3s ease;
 }
 
 .hero-description {
   font-size: 1.25rem;
-  color: #a0a0a0;
+  color: var(--text-secondary);
   margin-bottom: 4rem;
   line-height: 1.7;
   font-family: "Inter", sans-serif;
@@ -284,6 +319,7 @@ const downloadUrls = computed(() =>
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  transition: color 0.3s ease;
 }
 
 .download-section {
@@ -294,10 +330,11 @@ const downloadUrls = computed(() =>
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 2rem;
-  color: #666666;
+  color: var(--text-tertiary);
   font-family: "JetBrains Mono", monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
 .download-buttons {
@@ -313,11 +350,11 @@ const downloadUrls = computed(() =>
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   text-decoration: none;
-  color: #e5e5e5;
+  color: var(--text-primary);
   transition: all 0.2s ease;
   cursor: pointer;
   position: relative;
@@ -325,8 +362,8 @@ const downloadUrls = computed(() =>
 }
 
 .download-button:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--card-bg-hover);
+  border-color: var(--border-color-hover);
   transform: translateY(-2px);
 }
 
@@ -351,20 +388,25 @@ const downloadUrls = computed(() =>
 .button-label {
   font-size: 1rem;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .button-subtitle {
   font-size: 0.75rem;
-  color: #666666;
+  color: var(--text-tertiary);
   margin-top: 0.25rem;
   font-family: "JetBrains Mono", monospace;
+  transition: color 0.3s ease;
 }
 
 .features {
   padding: 8rem 0;
-  background: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .features-grid {
@@ -375,8 +417,8 @@ const downloadUrls = computed(() =>
 
 .feature-card {
   padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
@@ -385,8 +427,8 @@ const downloadUrls = computed(() =>
 }
 
 .feature-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--card-bg-hover);
+  border-color: var(--border-color-hover);
   transform: translateY(-4px);
 }
 
@@ -394,28 +436,34 @@ const downloadUrls = computed(() =>
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: var(--text-primary);
   font-family: "Inter", sans-serif;
   letter-spacing: -0.3px;
+  transition: color 0.3s ease;
 }
 
 .feature-description {
-  color: #a0a0a0;
+  color: var(--text-secondary);
   line-height: 1.7;
   font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .footer {
   padding: 3rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
   text-align: center;
-  background: rgba(10, 10, 10, 0.5);
+  background: var(--bg-tertiary);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .footer-text {
-  color: #666666;
+  color: var(--text-tertiary);
   font-family: "Inter", sans-serif;
   font-size: 0.875rem;
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 768px) {
