@@ -7,4 +7,3 @@ test("main heading is visible", async ({ page }) => {
   });
   await expect(heading).toBeVisible();
 });
-

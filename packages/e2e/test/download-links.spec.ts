@@ -9,4 +9,3 @@ test("download links are visible", async ({ page }) => {
   await expect(macosLink).toBeVisible();
   await expect(linuxLink).toBeVisible();
 });
-
