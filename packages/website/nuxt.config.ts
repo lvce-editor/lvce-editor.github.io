@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
+    compatibilityDate: "2026-01-03",
     prerender: {
       routes: ["/", "/download"],
     },
