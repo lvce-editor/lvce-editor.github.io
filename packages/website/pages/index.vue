@@ -302,8 +302,8 @@ const { theme, toggleTheme } = useTheme();
   opacity: 1;
 }
 
-[data-theme="light"] .theme-icon {
-  filter: brightness(0);
+[data-theme="dark"] .theme-icon {
+  filter: invert(1);
 }
 
 .main {
@@ -409,6 +409,10 @@ const { theme, toggleTheme } = useTheme();
 
 .download-button:hover .platform-icon {
   opacity: 1;
+}
+
+[data-theme="dark"] .platform-icon {
+  filter: invert(1);
 }
 
 .button-content {
