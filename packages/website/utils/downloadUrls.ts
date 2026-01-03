@@ -18,8 +18,8 @@ export function getDownloadUrl(
 
   const platformFiles: Record<Platform, string> = {
     linux: `lvce-${versionTag}_amd64.deb`,
-    macos: `lvce-${versionTag}_x64.dmg`,
-    windows: `lvce-${versionTag}_x64.exe`,
+    macos: `lvce-${versionTag}_arm64.dmg`,
+    windows: `Lvce-Setup-${versionTag}-x64.exe`,
   };
 
   const filename = platformFiles[platform];
