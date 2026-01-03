@@ -29,7 +29,7 @@
           <div class="hero-content">
             <h2 class="hero-title">
               A Modern Code Editor
-              <span class="gradient-text">Built for Developers</span>
+              <span class="accent-text">Built for Developers</span>
             </h2>
             <p class="hero-description">
               Experience a powerful, fast, and extensible code editor designed
@@ -108,7 +108,6 @@
         <div class="container">
           <div class="features-grid">
             <div class="feature-card">
-              <div class="feature-icon">⚡</div>
               <h3 class="feature-title">Lightning Fast</h3>
               <p class="feature-description">
                 Built for performance with instant startup and smooth editing
@@ -116,14 +115,12 @@
               </p>
             </div>
             <div class="feature-card">
-              <div class="feature-icon">🔌</div>
               <h3 class="feature-title">Extensible</h3>
               <p class="feature-description">
                 Customize and extend with plugins to fit your workflow.
               </p>
             </div>
             <div class="feature-card">
-              <div class="feature-icon">🎨</div>
               <h3 class="feature-title">Beautiful UI</h3>
               <p class="feature-description">
                 Modern, clean interface designed for focus and productivity.
@@ -167,6 +164,8 @@ const handleDownload = (platform: Platform): void => {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .container {
@@ -178,6 +177,9 @@ const handleDownload = (platform: Platform): void => {
 .header {
   padding: 2rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
 }
 
 .header-content {
@@ -189,27 +191,29 @@ const handleDownload = (platform: Platform): void => {
 .logo h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #58a6ff;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  font-family: "Inter", sans-serif;
 }
 
 .github-link {
   display: flex;
   align-items: center;
-  color: #c9d1d9;
+  color: #a0a0a0;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   padding: 0.5rem;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .github-link:hover {
-  color: #58a6ff;
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
 }
 
 .github-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .main {
@@ -217,35 +221,45 @@ const handleDownload = (platform: Platform): void => {
 }
 
 .hero {
-  padding: 6rem 0;
+  padding: 8rem 0;
   text-align: center;
+  position: relative;
 }
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
-  color: #f0f6fc;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1.5px;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #58a6ff 0%, #bc8cff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.accent-text {
+  color: #a0a0a0;
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 0.85em;
 }
 
 .hero-description {
   font-size: 1.25rem;
-  color: #8b949e;
-  margin-bottom: 3rem;
-  line-height: 1.6;
+  color: #a0a0a0;
+  margin-bottom: 4rem;
+  line-height: 1.7;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .download-section {
@@ -253,16 +267,19 @@ const handleDownload = (platform: Platform): void => {
 }
 
 .download-title {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   margin-bottom: 2rem;
-  color: #f0f6fc;
+  color: #666666;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .download-buttons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -272,38 +289,32 @@ const handleDownload = (platform: Platform): void => {
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 8px;
   text-decoration: none;
-  color: #c9d1d9;
-  transition: all 0.3s ease;
+  color: #e5e5e5;
+  transition: all 0.2s ease;
   cursor: pointer;
+  position: relative;
+  font-family: "Inter", sans-serif;
 }
 
 .download-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.download-button.windows:hover {
-  border-color: #0078d4;
-}
-
-.download-button.macos:hover {
-  border-color: #007aff;
-}
-
-.download-button.linux:hover {
-  border-color: #fcc624;
 }
 
 .platform-icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.download-button:hover .platform-icon {
+  opacity: 1;
 }
 
 .button-content {
@@ -314,19 +325,22 @@ const handleDownload = (platform: Platform): void => {
 }
 
 .button-label {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #f0f6fc;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
 }
 
 .button-subtitle {
-  font-size: 0.875rem;
-  color: #8b949e;
+  font-size: 0.75rem;
+  color: #666666;
+  margin-top: 0.25rem;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .features {
-  padding: 6rem 0;
+  padding: 8rem 0;
   background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .features-grid {
@@ -336,50 +350,54 @@ const handleDownload = (platform: Platform): void => {
 }
 
 .feature-card {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
+  position: relative;
+  font-family: "Inter", sans-serif;
 }
 
 .feature-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-4px);
 }
 
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
 .feature-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #f0f6fc;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.3px;
 }
 
 .feature-description {
-  color: #8b949e;
-  line-height: 1.6;
+  color: #a0a0a0;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .footer {
   padding: 3rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+  background: rgba(10, 10, 10, 0.5);
 }
 
 .footer-text {
-  color: #8b949e;
+  color: #666666;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
+    letter-spacing: -1px;
   }
 
   .hero-description {
