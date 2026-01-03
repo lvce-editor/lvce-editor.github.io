@@ -30,5 +30,5 @@ export default defineNuxtConfig({
       version: process.env.APP_VERSION || "0.70.0",
     },
   },
-  ssr: false,
+  ssr: true,
 });
