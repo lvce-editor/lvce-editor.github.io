@@ -28,7 +28,6 @@
               class="theme-icon"
             />
           </button>
-          <NuxtLink to="/download" class="nav-link">Download</NuxtLink>
           <a
             href="https://lvce-editor.github.io/blog/"
             class="blog-link"
@@ -36,6 +35,7 @@
           >
             Blog
           </a>
+          <NuxtLink to="/download" class="nav-link">Download</NuxtLink>
           <a
             href="https://github.com/lvce-editor/lvce-editor/"
             target="_blank"
