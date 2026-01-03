@@ -19,13 +19,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/seo", "@nuxt/fonts"],
   ssr: true,
-
   nitro: {
     prerender: {
       routes: ["/"],
     },
   },
-
   runtimeConfig: {
     public: {
       releaseUrlBase:
