@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from "nuxt/config";
+import config from "./config.json" with { type: "json" };
 
 export default defineNuxtConfig({
   app: {
@@ -24,10 +25,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      releaseUrlBase:
-        process.env.RELEASE_URL_BASE ||
-        "https://github.com/lvce-editor/lvce-editor/releases/download",
-      version: process.env.APP_VERSION || "0.70.0",
+      releaseUrlBase: process.env.RELEASE_URL_BASE || config.releaseUrlBase,
+      version: process.env.APP_VERSION || config.version,
+      currentYear: config.currentYear,
     },
   },
   ssr: true,

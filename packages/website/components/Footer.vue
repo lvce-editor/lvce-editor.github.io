@@ -1,13 +1,14 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">Copyright 2026 Lvce Editor</p>
+      <p class="footer-text">Copyright {{ currentYear }} Lvce Editor</p>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-// No script needed for footer
+const config = useRuntimeConfig();
+const currentYear = config.public.currentYear;
 </script>
 
 <style scoped>
