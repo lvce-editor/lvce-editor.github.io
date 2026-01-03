@@ -2,9 +2,6 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-
-
-
   modules: ["@nuxtjs/seo", "@nuxt/fonts"],
   ssr: true,
   devtools: { enabled: true },
