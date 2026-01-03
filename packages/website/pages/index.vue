@@ -7,7 +7,7 @@
             <h1>Lvce Editor</h1>
           </div>
           <a
-            href="https://github.com/lvce-editor/lvce-editor.github.io"
+            href="https://github.com/lvce-editor/lvce-editor/"
             target="_blank"
             rel="noopener noreferrer"
             class="github-link"
@@ -41,6 +41,7 @@
                 <a
                   :href="downloadUrls.windows"
                   class="download-button windows"
+                  rel="download"
                   @click.prevent="handleDownload('windows')"
                 >
                   <svg
@@ -60,6 +61,7 @@
                 <a
                   :href="downloadUrls.macos"
                   class="download-button macos"
+                  rel="download"
                   @click.prevent="handleDownload('macos')"
                 >
                   <svg
@@ -79,6 +81,7 @@
                 <a
                   :href="downloadUrls.linux"
                   class="download-button linux"
+                  rel="download"
                   @click.prevent="handleDownload('linux')"
                 >
                   <svg
