@@ -59,6 +59,21 @@
                   </div>
                 </a>
               </div>
+              <div class="additional-variants">
+                <h3 class="variants-title">Additional Downloads</h3>
+                <div class="variants-grid">
+                  <a
+                    v-for="variant in additionalVariants"
+                    :key="variant.variant"
+                    :href="getVariantUrl(variant.variant)"
+                    class="variant-link"
+                    rel="download"
+                  >
+                    <span class="variant-label">{{ variant.label }}</span>
+                    <span class="variant-subtitle">{{ variant.subtitle }}</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -117,7 +132,12 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { getAllDownloadUrls } from "~/utils/downloadUrls";
+import {
+  type DownloadVariant,
+  getAllDownloadUrls,
+  getAdditionalDownloadVariants,
+  getVariantDownloadUrl,
+} from "~/utils/downloadUrls";
 
 useHead({
   title:
@@ -138,6 +158,22 @@ const downloadUrls = computed(() =>
     releaseUrlBase: config.public.releaseUrlBase,
   }),
 );
+
+const additionalVariants = computed(() =>
+  getAdditionalDownloadVariants({
+    version: config.public.version,
+    releaseUrlBase: config.public.releaseUrlBase,
+  }),
+);
+
+function getVariantUrl(variant: DownloadVariant): string {
+  return getVariantDownloadUrl(variant, {
+    version: config.public.version,
+    releaseUrlBase: config.public.releaseUrlBase,
+  });
+}
+
+const { theme, toggleTheme } = useTheme();
 </script>
 
 <style scoped>
@@ -271,6 +307,70 @@ const downloadUrls = computed(() =>
   transition: color 0.3s ease;
 }
 
+.additional-variants {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.variants-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.variants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.variant-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.variant-link:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--border-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .variant-link:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.variant-label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.variant-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-top: 0.25rem;
+  font-family: "JetBrains Mono", monospace;
+  transition: color 0.3s ease;
+}
+
 .download-info {
   padding: 6rem 0;
   background: var(--bg-secondary);
@@ -389,6 +489,19 @@ const downloadUrls = computed(() =>
 
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .variants-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .variant-link {
+    padding: 0.875rem 1rem;
+  }
+
+  .variants-title {
+    font-size: 1rem;
   }
 }
 </style>
