@@ -13,5 +13,9 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^25.0.3",
     "nuxt": "^3.13.0"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8"
   }
 }
