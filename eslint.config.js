@@ -14,6 +14,6 @@ export default [
     },
   },
   {
-    ignores: ["**/.nuxt/**", "playwright.config.ts"],
+    ignores: ["**/.nuxt/**", "**/playwright.config.ts"],
   },
 ];
