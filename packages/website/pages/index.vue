@@ -3,79 +3,7 @@
     <Header />
 
     <main class="main">
-      <<<<<<< Updated upstream
-      <section class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h2 class="hero-title">
-              A Modern Code Editor
-              <span class="accent-text">Built for Developers</span>
-            </h2>
-            <p class="hero-description">
-              Experience a powerful, fast, and extensible code editor designed
-              to enhance your development workflow.
-            </p>
-            <div class="download-section">
-              <h3 class="download-title">Download for your platform</h3>
-              <div class="download-buttons">
-                <a
-                  :href="downloadUrls.windows"
-                  class="download-button windows"
-                  rel="download"
-                >
-                  <img
-                    src="/windows-icon.svg"
-                    alt="Windows"
-                    class="platform-icon"
-                  />
-                  <div class="button-content">
-                    <span class="button-label">Windows</span>
-                    <span class="button-subtitle">.exe</span>
-                  </div>
-                </a>
-                <a
-                  :href="downloadUrls.macos"
-                  class="download-button macos"
-                  rel="download"
-                >
-                  <img
-                    src="/macos-icon.svg"
-                    alt="macOS"
-                    class="platform-icon"
-                  />
-                  <div class="button-content">
-                    <span class="button-label">macOS</span>
-                    <span class="button-subtitle">.dmg</span>
-                  </div>
-                </a>
-                <a
-                  :href="downloadUrls.linux"
-                  class="download-button linux"
-                  rel="download"
-                >
-                  <img
-                    src="/linux-icon.svg"
-                    alt="Linux"
-                    class="platform-icon"
-                  />
-                  <div class="button-content">
-                    <span class="button-label">Linux</span>
-                    <span class="button-subtitle">.deb</span>
-                  </div>
-                </a>
-              </div>
-              <div class="other-platforms-link">
-                <NuxtLink to="/download" class="other-platforms-text">
-                  See All Downloads
-                </NuxtLink>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      =======
       <Hero />
-      >>>>>>> Stashed changes
 
       <Tryout />
 
