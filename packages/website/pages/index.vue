@@ -214,6 +214,11 @@ const handleDownload = (platform: Platform): void => {
 .github-icon {
   width: 20px;
   height: 20px;
+  transition: filter 0.2s ease;
+}
+
+.github-link:hover .github-icon {
+  filter: brightness(0) invert(1);
 }
 
 .main {
