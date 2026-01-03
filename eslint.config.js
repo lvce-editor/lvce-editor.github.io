@@ -10,9 +10,10 @@ export default [
       "github-actions/needs": "off",
       "github-actions/permissions": "off",
       "unicorn/text-encoding-identifier-case": "off",
+      "@typescript-eslint/prefer-readonly-parameter-types": "off",
     },
   },
   {
-    ignores: ["**/.nuxt/**"],
+    ignores: ["**/.nuxt/**", "**/playwright.config.ts"],
   },
 ];
