@@ -16,12 +16,15 @@ export default defineNuxtConfig({
       title: "Lvce Editor",
     },
   },
+
   devtools: { enabled: true },
+
   nitro: {
     prerender: {
       routes: ["/"],
     },
   },
+
   runtimeConfig: {
     public: {
       releaseUrlBase:
@@ -30,5 +33,7 @@ export default defineNuxtConfig({
       version: process.env.APP_VERSION || "0.70.0",
     },
   },
+
   ssr: true,
+  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
 });
