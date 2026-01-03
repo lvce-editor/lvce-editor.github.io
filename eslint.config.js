@@ -14,6 +14,7 @@ export default [
       "github-actions/permissions": "off",
       "unicorn/text-encoding-identifier-case": "off",
       "@typescript-eslint/prefer-readonly-parameter-types": "off",
+      "nuxt/nuxt-config-keys-order": "off",
     },
   },
   {
