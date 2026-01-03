@@ -1,22 +1,12 @@
 import { execa } from "execa";
 import { root } from "./root.ts";
+import { join } from "node:path";
 
 const main = async (): Promise<void> => {
-  execa(`npm`, ["run", "build:watch"], {
-    cwd: root,
+  await execa(`npm`, ["run", "dev"], {
+    cwd: join(root, "packages", "website"),
     stdio: "inherit",
   });
-  execa(
-    "node",
-    [
-      "packages/server/node_modules/@lvce-editor/server/bin/server.js",
-      "--test-path=packages/e2e",
-    ],
-    {
-      cwd: root,
-      stdio: "inherit",
-    },
-  );
 };
 
 main();
