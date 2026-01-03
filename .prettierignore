@@ -1,0 +1,4 @@
+.nuxt
+.tmp
+.output
+node_modules
