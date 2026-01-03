@@ -7,6 +7,9 @@
     },
     {
       "path": "./packages/website"
+    },
+    {
+      "path": "./packages/e2e"
     }
   ]
 }
