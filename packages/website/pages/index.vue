@@ -6,15 +6,24 @@
           <div class="logo">
             <h1>Lvce Editor</h1>
           </div>
-          <a
-            href="https://github.com/lvce-editor/lvce-editor/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="github-link"
-            aria-label="View on GitHub"
-          >
-            <img src="/github-icon.svg" alt="GitHub" class="github-icon" />
-          </a>
+          <nav class="header-nav">
+            <a
+              href="https://lvce-editor.github.io/blog/"
+              class="blog-link"
+              aria-label="Blog"
+            >
+              Blog
+            </a>
+            <a
+              href="https://github.com/lvce-editor/lvce-editor/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-link"
+              aria-label="View on GitHub"
+            >
+              <img src="/github-icon.svg" alt="GitHub" class="github-icon" />
+            </a>
+          </nav>
         </div>
       </div>
     </header>
@@ -176,6 +185,12 @@ const downloadUrls = computed(() =>
   align-items: center;
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .logo h1 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -195,6 +210,22 @@ const downloadUrls = computed(() =>
 }
 
 .github-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.blog-link {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+}
+
+.blog-link:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
 }
