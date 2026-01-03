@@ -2,6 +2,9 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
+  ssr: true,
+  devtools: { enabled: true },
   app: {
     head: {
       link: [{ href: "/favicon.ico", rel: "icon", type: "image/x-icon" }],
@@ -16,9 +19,6 @@ export default defineNuxtConfig({
       title: "Lvce Editor",
     },
   },
-  modules: ["@nuxtjs/seo", "@nuxt/fonts"],
-  devtools: { enabled: true },
-  ssr: true,
 
   runtimeConfig: {
     public: {
