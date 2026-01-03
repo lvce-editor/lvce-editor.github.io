@@ -13,11 +13,7 @@
             class="github-link"
             aria-label="View on GitHub"
           >
-            <img
-              src="/github-icon.svg"
-              alt="GitHub"
-              class="github-icon"
-            />
+            <img src="/github-icon.svg" alt="GitHub" class="github-icon" />
           </a>
         </div>
       </div>
