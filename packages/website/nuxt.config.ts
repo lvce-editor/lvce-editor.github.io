@@ -1,0 +1,26 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from "nuxt/config";
+
+export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [{ href: "/favicon.ico", rel: "icon", type: "image/x-icon" }],
+      meta: [
+        { charset: "utf-8" },
+        { content: "width=device-width, initial-scale=1", name: "viewport" },
+        {
+          content: "Lvce Editor - A modern code editor for developers",
+          name: "description",
+        },
+      ],
+      title: "Lvce Editor",
+    },
+  },
+  devtools: { enabled: true },
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
+  ssr: false,
+});
