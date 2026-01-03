@@ -29,8 +29,8 @@ onMounted(() => {
   --border-color: rgba(0, 0, 0, 0.1);
   --border-color-hover: rgba(0, 0, 0, 0.15);
   --overlay-bg: rgba(255, 255, 255, 0.8);
-  --card-bg: rgba(255, 255, 255, 0.5);
-  --card-bg-hover: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(0, 0, 0, 0.02);
+  --card-bg-hover: rgba(0, 0, 0, 0.05);
   --grain-opacity: 0.03;
   --radial-gradient: radial-gradient(
     ellipse at center,

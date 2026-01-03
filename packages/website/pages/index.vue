@@ -246,7 +246,7 @@ const { theme, toggleTheme } = useTheme();
 .github-link {
   display: flex;
   align-items: center;
-  color: #a0a0a0;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: all 0.2s ease;
   padding: 0.5rem;
@@ -254,24 +254,8 @@ const { theme, toggleTheme } = useTheme();
 }
 
 .github-link:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.blog-link {
-  color: #a0a0a0;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-family: "Inter", sans-serif;
-}
-
-.blog-link:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  background: var(--card-bg);
 }
 
 .github-icon {
