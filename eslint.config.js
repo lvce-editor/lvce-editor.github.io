@@ -2,6 +2,7 @@ import * as config from "@lvce-editor/eslint-config";
 import * as actions from "@lvce-editor/eslint-plugin-github-actions";
 import vue from "eslint-plugin-vue";
 import nuxtPlugin from "@nuxt/eslint-plugin";
+import vueParser from "vue-eslint-parser";
 
 export default [
   ...config.default,
@@ -21,8 +22,11 @@ export default [
       vue,
     },
     languageOptions: {
+      parser: vueParser,
       parserOptions: {
         parser: "@typescript-eslint/parser",
+        ecmaVersion: "latest",
+        sourceType: "module",
       },
     },
     rules: {
@@ -37,7 +41,9 @@ export default [
       nuxt: nuxtPlugin,
     },
     rules: {
-      ...nuxtPlugin.rules,
+      "nuxt/prefer-import-meta": "error",
+      "nuxt/nuxt-config-keys-order": "warn",
+      "nuxt/no-nuxt-config-test-key": "error",
     },
   },
   {
