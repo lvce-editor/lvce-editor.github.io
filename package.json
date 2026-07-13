@@ -25,11 +25,12 @@
     "@lerna/legacy-package-management": "^8.2.4",
     "@lvce-editor/eslint-config": "^4.3.0",
     "@nuxt/eslint-plugin": "^1.12.1",
+    "@typescript-eslint/parser": "^8.63.0",
     "eslint": "^9.39.2",
     "eslint-plugin-vue": "^10.6.2",
     "lerna": "^8.2.4",
     "prettier": "^3.7.4",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.0",
     "vue-eslint-parser": "^10.2.0"
   }
 }
