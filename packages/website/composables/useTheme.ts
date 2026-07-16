@@ -19,14 +19,12 @@ export const useTheme = (): {
   };
 
   const initTheme = (): void => {
-    if (import.meta.client) {
-      const savedTheme = localStorage.getItem("theme") as
-        | "light"
-        | "dark"
-        | null;
-      const initialTheme = savedTheme || "light";
-      setTheme(initialTheme);
+    if (!import.meta.client) {
+      return;
     }
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const initialTheme = savedTheme || "light";
+    setTheme(initialTheme);
   };
 
   return {

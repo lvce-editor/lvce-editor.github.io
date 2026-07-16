@@ -10,7 +10,9 @@ export default [
   ...actions.default,
   {
     rules: {
+      "github-actions/action-versions": "off",
       "github-actions/needs": "off",
+      "github-actions/no-e2e-in-release": "off",
       "github-actions/permissions": "off",
       "unicorn/text-encoding-identifier-case": "off",
       "@typescript-eslint/prefer-readonly-parameter-types": "off",
@@ -53,6 +55,21 @@ export default [
     },
   },
   {
-    ignores: ["**/.nuxt/**", "**/playwright.config.ts"],
+    files: [".devcontainer/devcontainer.json"],
+    rules: {
+      "devcontainer/allowed-image": "off",
+      "devcontainer/require-desktop-lite-feature": "off",
+    },
+  },
+  {
+    files: ["packages/e2e/test/**/*.ts"],
+    rules: {
+      "e2e/no-direct-click": "off",
+      "e2e/no-imports": "off",
+      "unicorn/isolated-functions": "off",
+    },
+  },
+  {
+    ignores: ["**/.nuxt/**", "**/.output/**", "**/playwright.config.ts"],
   },
 ];
