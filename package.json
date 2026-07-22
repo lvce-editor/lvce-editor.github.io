@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@lerna/legacy-package-management": "^8.2.4",
-    "@lvce-editor/eslint-config": "^16.5.0",
+    "@lvce-editor/eslint-config": "^17.0.3",
     "@nuxt/eslint-plugin": "^1.16.0",
     "@typescript-eslint/parser": "^8.63.0",
     "eslint": "^10.7.0",
