@@ -10,25 +10,25 @@
   "author": "Lvce Editor",
   "type": "module",
   "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "node packages/build/src/build.ts",
     "dev": "node packages/build/src/dev.ts",
     "e2e": "cd packages/e2e && npm run e2e",
     "e2e:headless": "echo ok",
     "format": "prettier --write .",
-    "postinstall": "lerna bootstrap --ci",
     "lint": "eslint . && prettier --check .",
-    "test": "lerna run test",
+    "test": "npm test --workspaces --if-present",
     "type-check": "tsc -b"
   },
   "devDependencies": {
-    "@lerna/legacy-package-management": "^8.2.4",
     "@lvce-editor/eslint-config": "^17.5.0",
     "@nuxt/eslint-plugin": "^1.16.0",
     "@typescript-eslint/parser": "^8.63.0",
     "eslint": "^10.8.0",
     "eslint-plugin-vue": "^10.9.2",
-    "lerna": "^8.2.4",
     "prettier": "^3.7.4",
     "typescript": "^6.0.0",
     "vue-eslint-parser": "^10.4.1"
