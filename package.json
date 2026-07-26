@@ -23,10 +23,10 @@
   },
   "devDependencies": {
     "@lerna/legacy-package-management": "^8.2.4",
-    "@lvce-editor/eslint-config": "^17.0.3",
+    "@lvce-editor/eslint-config": "^17.5.0",
     "@nuxt/eslint-plugin": "^1.16.0",
     "@typescript-eslint/parser": "^8.63.0",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "eslint-plugin-vue": "^10.9.2",
     "lerna": "^8.2.4",
     "prettier": "^3.7.4",
