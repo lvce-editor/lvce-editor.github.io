@@ -24,7 +24,7 @@
     "type-check": "tsc -b"
   },
   "devDependencies": {
-    "@lvce-editor/eslint-config": "^17.5.0",
+    "@lvce-editor/eslint-config": "^17.6.0",
     "@nuxt/eslint-plugin": "^1.16.0",
     "@typescript-eslint/parser": "^8.63.0",
     "eslint": "^10.8.0",
