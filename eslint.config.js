@@ -1,13 +1,13 @@
+import { defineConfig } from "eslint/config";
 import * as config from "@lvce-editor/eslint-config";
-import * as actions from "@lvce-editor/eslint-plugin-github-actions";
 import vue from "eslint-plugin-vue";
 import nuxtPlugin from "@nuxt/eslint-plugin";
 import vueParser from "vue-eslint-parser";
 
-export default [
+export default defineConfig([
   ...config.default,
 
-  ...actions.default,
+  ...config.recommendedActions,
   {
     rules: {
       "github-actions/action-versions": "off",
@@ -72,4 +72,4 @@ export default [
   {
     ignores: ["**/.nuxt/**", "**/.output/**", "**/playwright.config.ts"],
   },
-];
+]);
