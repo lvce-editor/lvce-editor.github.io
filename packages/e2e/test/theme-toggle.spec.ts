@@ -10,12 +10,13 @@ test("theme toggle button is visible", async ({ page }) => {
 
 test("theme toggle switches between light and dark", async ({ page }) => {
   await page.goto("/");
+  const html = page.locator("html");
   const themeToggle = page.getByRole("button", {
     name: /Switch to (dark|light) mode/i,
   });
 
   // Check initial theme is light
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(html).toHaveAttribute("data-theme", "light");
   await expect(themeToggle).toHaveAttribute(
     "aria-label",
     "Switch to dark mode",
@@ -23,7 +24,7 @@ test("theme toggle switches between light and dark", async ({ page }) => {
 
   // Toggle to dark
   await themeToggle.click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(html).toHaveAttribute("data-theme", "dark");
   await expect(themeToggle).toHaveAttribute(
     "aria-label",
     "Switch to light mode",
@@ -31,7 +32,7 @@ test("theme toggle switches between light and dark", async ({ page }) => {
 
   // Toggle back to light
   await themeToggle.click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(html).toHaveAttribute("data-theme", "light");
   await expect(themeToggle).toHaveAttribute(
     "aria-label",
     "Switch to dark mode",
@@ -40,13 +41,14 @@ test("theme toggle switches between light and dark", async ({ page }) => {
 
 test("theme persists in localStorage", async ({ page }) => {
   await page.goto("/");
+  const html = page.locator("html");
   const themeToggle = page.getByRole("button", {
     name: /Switch to (dark|light) mode/i,
   });
 
   // Toggle to dark
   await themeToggle.click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(html).toHaveAttribute("data-theme", "dark");
 
   // Check localStorage
   const theme = await page.evaluate(() => localStorage.getItem("theme"));
@@ -54,7 +56,7 @@ test("theme persists in localStorage", async ({ page }) => {
 
   // Toggle to light
   await themeToggle.click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(html).toHaveAttribute("data-theme", "light");
 
   // Check localStorage
   const themeAfterToggle = await page.evaluate(() =>
@@ -65,19 +67,20 @@ test("theme persists in localStorage", async ({ page }) => {
 
 test("theme persists after page reload", async ({ page }) => {
   await page.goto("/");
+  const html = page.locator("html");
   const themeToggle = page.getByRole("button", {
     name: /Switch to (dark|light) mode/i,
   });
 
   // Toggle to dark
   await themeToggle.click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(html).toHaveAttribute("data-theme", "dark");
 
   // Reload page
   await page.reload();
 
   // Verify theme is still dark
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(html).toHaveAttribute("data-theme", "dark");
   await expect(
     page.getByRole("button", {
       name: /Switch to light mode/i,
